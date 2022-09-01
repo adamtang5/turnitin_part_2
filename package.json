@@ -1,0 +1,27 @@
+{
+  "name": "turnitin_part_2",
+  "version": "1.0.0",
+  "description": "Create an app that displays a random dog image, and links to 10 random dog pictures on the bottom, labeled by their breed.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha",
+    "test-with-json": "mocha --reporter json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamtang5/turnitin_part_2.git"
+  },
+  "keywords": [],
+  "author": "Adam Tang",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "chai-spies": "^1.0.0",
+    "mocha": "^10.0.0",
+    "node-fetch": "^3.2.10"
+  },
+  "bugs": {
+    "url": "https://github.com/adamtang5/turnitin_part_2/issues"
+  },
+  "homepage": "https://github.com/adamtang5/turnitin_part_2#readme"
+}
