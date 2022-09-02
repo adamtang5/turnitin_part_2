@@ -1,0 +1,19 @@
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    align-items: center;
+    margin-top: 20px;
+}
+
+img.dog-image {
+    margin: 20px;
+    max-width: 750px;
+}
