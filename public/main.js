@@ -10,15 +10,15 @@ export const createMainContent = () => {
     img.className = 'dog-image';
     fetchSingleImage();
 
-    // Create ul
-    const ul = document.createElement('ul');
-    ul.className = 'dog-links';
+    // Create ol
+    const ol = document.createElement('ol');
+    ol.className = 'dog-links';
     fetch10Images();
 
     const container = document.querySelector('.container');
     container.appendChild(h1);
     container.appendChild(img);
-    container.appendChild(ul);
+    container.appendChild(ol);
 };
 
 const fetchSingleImage = async () => {
@@ -43,7 +43,7 @@ const fetch10Images = async () => {
         // Converts to JSON
         const dogData = await dogRes.json();
         const dogImgUrls = dogData.message;
-        const dogUl = document.querySelector('ul.dog-links');
+        const dogOl = document.querySelector('ol.dog-links');
         dogImgUrls.forEach((url, i) => {
             const link = document.createElement('a');
             link.href = url;
@@ -52,7 +52,7 @@ const fetch10Images = async () => {
             link.innerText = breed;
             const dogLi = document.createElement('li');
             dogLi.classList = `dog-link dog-${i + 1}`;
-            dogUl.appendChild(dogLi);
+            dogOl.appendChild(dogLi);
             dogLi.appendChild(link);
         });
     } catch (e) {
