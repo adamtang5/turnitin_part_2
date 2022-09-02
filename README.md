@@ -7,9 +7,8 @@ API documentation: https://dog.ceo/dog-api/documentation/
 
 ## Set up
 
-1.  `cd` into the folder and `npm install` to install dependencies
-2.  Run `node app.js` to start the application. Navigate to [localhost:5000](http://localhost:5000) in your browser.
-3.  Run `npm test` to test all test specs.
+`cd` into the folder and run `node app.js` to start the application. Navigate
+to [localhost:5000](http://localhost:5000) in your browser.
 
 ## Screenshot
 
