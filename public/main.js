@@ -47,6 +47,8 @@ const fetch10Images = async () => {
         dogImgUrls.forEach((url, i) => {
             const link = document.createElement('a');
             link.href = url;
+            link.target = '_blank';
+            link.rel = 'noopener';
             const breed = url.split('breeds/')[1].split('/')[0];
             const dogBadge = document.createElement('div');
             dogBadge.classList = `dog-badge flex-column dog-${i + 1}`;
