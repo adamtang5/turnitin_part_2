@@ -1,3 +1,16 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: purple;
+}
+
+a:visited {
+    color: rebeccapurple;
+}
+
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -16,4 +29,26 @@
 img.dog-image {
     margin: 20px;
     max-width: 750px;
+}
+
+.recommendation {
+    flex-wrap: wrap;
+    max-width: 80%;
+    justify-content: center;
+}
+
+.dog-badge {
+    align-items: center;
+    padding: 40px 30px 30px;
+    border: 1px solid #ccc;
+}
+
+.thumbnail {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.breed-label {
+    margin-top: 10px;
 }

@@ -10,15 +10,15 @@ export const createMainContent = () => {
     img.className = 'dog-image';
     fetchSingleImage();
 
-    // Create ol
-    const ol = document.createElement('ol');
-    ol.className = 'dog-links';
+    // Create recommendation div
+    const recDiv = document.createElement('div');
+    recDiv.classList = 'recommendation flex-row';
     fetch10Images();
 
     const container = document.querySelector('.container');
     container.appendChild(h1);
     container.appendChild(img);
-    container.appendChild(ol);
+    container.appendChild(recDiv);
 };
 
 const fetchSingleImage = async () => {
@@ -43,17 +43,23 @@ const fetch10Images = async () => {
         // Converts to JSON
         const dogData = await dogRes.json();
         const dogImgUrls = dogData.message;
-        const dogOl = document.querySelector('ol.dog-links');
+        const recDiv = document.querySelector('.recommendation');
         dogImgUrls.forEach((url, i) => {
             const link = document.createElement('a');
             link.href = url;
             const breed = url.split('breeds/')[1].split('/')[0];
-            // console.log(breed);
-            link.innerText = breed;
-            const dogLi = document.createElement('li');
-            dogLi.classList = `dog-link dog-${i + 1}`;
-            dogOl.appendChild(dogLi);
-            dogLi.appendChild(link);
+            const dogBadge = document.createElement('div');
+            dogBadge.classList = `dog-badge flex-column dog-${i + 1}`;
+            const dogThumb = document.createElement('img');
+            dogThumb.className = 'thumbnail';
+            dogThumb.src = url;
+            const breedLabel = document.createElement('div');
+            breedLabel.className = 'breed-label';
+            breedLabel.innerText = breed;
+            dogBadge.appendChild(dogThumb);
+            dogBadge.appendChild(breedLabel);
+            link.appendChild(dogBadge);
+            recDiv.appendChild(link);
         });
     } catch (e) {
         console.log('Failed to fetch images', e);
